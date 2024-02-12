@@ -1,4 +1,4 @@
-"use client";
+import { age, name } from "./data";
 
 export default function Cart() {
   return (

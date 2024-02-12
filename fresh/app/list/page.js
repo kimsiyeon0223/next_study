@@ -1,5 +1,10 @@
 export default function List() {
   let 상품 = ["Tomatoes", "Pasta", "Cocount"];
+  let rr = [2, 3, 4];
+  rr.map((a, i) => {
+    console.log(a);
+    console.log(i);
+  });
 
   return (
     <div>

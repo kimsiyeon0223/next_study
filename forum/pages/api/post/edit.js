@@ -13,4 +13,7 @@ export default async function handler(요청, 응답) {
   }
 }
 
+// 수정기능 만들기 강의 요약
+// document 수정은 updateOne()
+
 // updateOne시 숫자를 덮어쓰기 말고, $inc 연산자를 쓰면 기존갑을 증감만 해줄수도있다

@@ -15,7 +15,7 @@ export default async function List() {
           <div className="list-item" key={i}>
             {/* link에도 prefetch기능이 내장되어 있음 */}
             <Link href={"/detail/" + result[i]._id}>{result[i].title}</Link>
-            <DetailLink />
+            <Link href={"/edit/" + result[i]._id}>수정</Link>
             <p>1월 1일</p>
           </div>
         );

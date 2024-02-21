@@ -5,19 +5,11 @@ import ListItem from "./ListItem";
 export default async function List() {
   const db = (await connectDB).db("forum");
   let result = await db.collection("post").find().toArray();
-  console.log(result[0].title); //대괄호 -> array자료형
+  // console.log(result[0].title); //대괄호 -> array자료형
 
   return (
     <div className="list-bg">
       <ListItem result={result} />
-      {/* <div className="list-item">
-        <h4>{result[1].title}</h4>
-        <p>{result[1].content}</p>
-      </div>
-      <div className="list-item">
-        <h4>{result[2].title}</h4>
-        <p>{result[2].content}</p>
-      </div> */}
     </div>
   );
 }

@@ -15,5 +15,6 @@ export default async function handler(요청, 응답) {
 
 // 수정기능 만들기 강의 요약
 // document 수정은 updateOne()
+// 서버에 필요한 데이터가 없으면 1. 유저에게 보내라고 하거나 2. DB조회
 
 // updateOne시 숫자를 덮어쓰기 말고, $inc 연산자를 쓰면 기존갑을 증감만 해줄수도있다

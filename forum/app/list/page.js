@@ -1,6 +1,5 @@
 import { connectDB } from "@/util/database";
 import Link from "next/link";
-import DetailLink from "./DetailLink";
 
 export default async function List() {
   const db = (await connectDB).db("forum");

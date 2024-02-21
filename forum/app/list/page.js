@@ -9,7 +9,7 @@ export default async function List() {
 
   return (
     <div className="list-bg">
-      <ListItem />
+      <ListItem result={result} />
       {/* <div className="list-item">
         <h4>{result[1].title}</h4>
         <p>{result[1].content}</p>

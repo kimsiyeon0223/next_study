@@ -11,15 +11,19 @@ export default function ListItem({ result }) {
             ✏️
           </Link>
           <span
-            onClick={() => {
+            onClick={(e) => {
               fetch("/api/post/delete", {
                 method: "DELETE",
                 body: result[i]._id,
               })
                 .then((r) => r.json())
-                .then((result) => {
-                  //성공시
+                .then(() => {
+                  e.target.parentElement.style.opacity = 0;
+                  setTimeout(() => {
+                    e.target.parentElement.style.display = "none";
+                  }, 1000);
                 });
+              //   fetch("/api/abc/");
             }}
           >
             🗑️

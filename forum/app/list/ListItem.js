@@ -1,6 +1,6 @@
 "use client";
-
-import { useEffect } from "react";
+import Link from "next/link";
+// import { useEffect } from "react";
 
 export default function ListItem({ result }) {
   // //useEffect는 html부터 유저에게 보여주고 실행됨 -> 검색노출이 어려울수있음

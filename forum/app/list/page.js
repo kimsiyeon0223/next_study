@@ -1,5 +1,6 @@
 import { connectDB } from "@/util/database";
 import Link from "next/link";
+import ListItem from "./ListItem";
 
 export default async function List() {
   const db = (await connectDB).db("forum");
@@ -8,18 +9,7 @@ export default async function List() {
 
   return (
     <div className="list-bg">
-      {result.map((a, i) => {
-        // return()+중괄호 생략가능
-        return (
-          <div className="list-item" key={i}>
-            {/* link에도 prefetch기능이 내장되어 있음 */}
-            <Link href={"/detail/" + result[i]._id}>{result[i].title}</Link>
-            <Link href={"/edit/" + result[i]._id}>수정</Link>
-            <p>1월 1일</p>
-          </div>
-        );
-      })}
-
+      <ListItem />
       {/* <div className="list-item">
         <h4>{result[1].title}</h4>
         <p>{result[1].content}</p>

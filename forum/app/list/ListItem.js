@@ -1,6 +1,14 @@
 "use client";
 
+import { useEffect } from "react";
+
 export default function ListItem() {
+  // //useEffect는 html부터 유저에게 보여주고 실행됨 -> 검색노출이 어려울수있음
+  // useEffect(() => {
+  //     서버에 부탁해서 DB게시물 가져옴
+  //     result = DB 게시물
+  // }, [])
+
   {
     result.map((a, i) => {
       // return()+중괄호 생략가능

@@ -21,14 +21,6 @@ export default async function RootLayout({ children }) {
           </Link>
           <Link href="/list">List</Link>
           <LoginBtn />
-          {session ? (
-            <span>
-              {session.user.name}
-              <LoginBtn />
-            </span>
-          ) : (
-            <LoginBtn />
-          )}
         </div>
         {children}
       </body>
@@ -36,14 +28,14 @@ export default async function RootLayout({ children }) {
   );
 }
 
-export function LogOutBtn() {
-  return (
-    <button
-      onClick={() => {
-        signOut();
-      }}
-    >
-      로그아웃
-    </button>
-  );
-}
+// export function LogOutBtn() {
+//   return (
+//     <button
+//       onClick={() => {
+//         signOut();
+//       }}
+//     >
+//       로그아웃
+//     </button>
+//   );
+// }

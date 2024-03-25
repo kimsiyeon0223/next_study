@@ -11,6 +11,6 @@ export const authOptions = {
     }),
   ],
   secret: "qwer1234",
-  adapter: MongoDBAdapter(connectDB),
+  adapter: MongoDBAdapter(connectDB), //다른 디비 사용하고 싶으면 디비 어뎁터 사용해서 코드짜면 됨
 };
 export default NextAuth(authOptions);

@@ -2,6 +2,8 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import Link from "next/link";
 import LoginBtn from "./LoginBtn";
+import { getServerSession } from "next-auth";
+import { authOptions } from "@/pages/api/auth/[...nextauth]";
 
 export const metadate = {
   title: "Create Next App",
@@ -9,6 +11,7 @@ export const metadate = {
 };
 
 export default async function RootLayout({ children }) {
+  await getServerSession(authOptions); //로그인된 유저정보 출력
   return (
     <html lang="en">
       <body>

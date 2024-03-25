@@ -1,9 +1,9 @@
-import { Inter } from "next/font/google";
 import "./globals.css";
 import Link from "next/link";
 import LoginBtn from "./LoginBtn";
 import { getServerSession } from "next-auth";
 import { authOptions } from "@/pages/api/auth/[...nextauth]";
+import { signOut } from "next-auth/react";
 
 export const metadate = {
   title: "Create Next App",
@@ -21,9 +21,29 @@ export default async function RootLayout({ children }) {
           </Link>
           <Link href="/list">List</Link>
           <LoginBtn />
+          {session ? (
+            <span>
+              {session.user.name}
+              <LoginBtn />
+            </span>
+          ) : (
+            <LoginBtn />
+          )}
         </div>
         {children}
       </body>
     </html>
+  );
+}
+
+export function LogOutBtn() {
+  return (
+    <button
+      onClick={() => {
+        signOut();
+      }}
+    >
+      로그아웃
+    </button>
   );
 }

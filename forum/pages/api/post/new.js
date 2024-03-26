@@ -1,6 +1,14 @@
 import { connectDB } from "@/util/database";
+import { getServerSession } from "next-auth";
+import { authOptions } from "../auth/[...nextauth]";
 
 export default async function handler(요청, 응답) {
+  let session = getServerSession(요청, 응답, authOptions); // 현재 로그인한 유저의 정보를 추출
+  console.log(session.user.email);
+  if (session) {
+    요청.body.auther = session.user.email;
+  }
+  console.log(요청.body);
   if (요청.method == "POST") {
     console.log(요청.body);
     if (요청.body.title == "") {
